@@ -1,0 +1,42 @@
+{
+  "name": "passport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "NODE_PATH=./src nodemon --ignore src/e2e --ignore **/__test__/**",
+    "lint": "eslint ./src",
+    "coverage": "rm -rf coverage && NODE_ENV=test NODE_PATH=./src istanbul cover _mocha -- --require src/e2e/tools/setup.js --recursive 'src/**/__test__/**/*.js'",
+    "unit": "NODE_ENV=test NODE_PATH=./src mocha --require src/e2e/tools/setup.js --recursive 'src/**/__test__/**/*.js'",
+    "e2e": "NODE_ENV=test NODE_PATH=./src mocha --require src/e2e/tools/setup.js --recursive 'src/e2e/test/**/*.js'",
+    "test": "npm run lint && npm run coverage && npm run e2e",
+    "precommit": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "eslint": "^2.8.0",
+    "eslint-plugin-import": "^1.5.0",
+    "express": "^4.13.4",
+    "fortune": "^3.5.6",
+    "husky": "^0.11.4",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.9.1",
+    "rimraf": "^2.5.2",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.1.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "bluebird": "^3.3.5",
+    "fortune-json-api": "^2.0.4",
+    "fortune-nedb": "^1.1.2",
+    "lodash": "^4.11.1",
+    "mkdirp": "^0.5.1",
+    "node-uuid": "^1.4.7",
+    "winston": "^2.2.0"
+  }
+}
