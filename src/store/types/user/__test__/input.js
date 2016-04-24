@@ -1,4 +1,4 @@
-/* global describe, it */
+/* eslint-env mocha */
 /* eslint max-nested-callbacks: "off" */
 const userCreate = require('../input').userCreate;
 const ResponseErrors = require('fortune/lib/common/errors');
@@ -16,17 +16,18 @@ const existsUserTransaction = {
 describe('userCreate', function() {
 	describe('should throw BadRequestError', function() {
 		it('without username and service', function() {
-			userCreate.bind(this, {}, {}).should.throw(BadRequestError);
+			return userCreate({}, {})
+			.should.eventually.rejectedWith(BadRequestError);
 		});
 
 		it('without username', function() {
-			userCreate.bind(this, {}, { service: 'asd' })
-				.should.throw(BadRequestError);
+			return userCreate({}, { service: 'asd' })
+			.should.eventually.rejectedWith(BadRequestError);
 		});
 
 		it('without service', function() {
-			userCreate.bind(this, {}, { username: 'asd' })
-				.should.throw(BadRequestError);
+			return userCreate({}, { username: 'asd' })
+			.should.eventually.rejectedWith(BadRequestError);
 		});
 	});
 

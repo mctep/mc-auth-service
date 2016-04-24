@@ -17,7 +17,8 @@ describe('api', function() {
 	it('should return api links', function() {
 		return request(app).get('/v1').set(headers)
 		.expect(200, { links: {
-			users: '/v1/users'
+			users: '/v1/users',
+			accessTokens: '/v1/accessTokens'
 		} });
 	});
 
@@ -57,7 +58,8 @@ describe('api', function() {
 					type: 'user',
 					attributes: {
 						username: 'test',
-						service: 'test'
+						service: 'test',
+						password: 'test'
 					}
 				}
 			});
@@ -88,6 +90,18 @@ describe('api', function() {
 					}
 				}
 			}).expect(201);
+		});
+
+		it('should not have hash in output', function() {
+			return request(app).get('/v1/users').set(headers)
+			.then((response) => {
+				const data = response.body.data;
+
+				data.should.be.an.instanceof(Array);
+				data.forEach((record) => {
+					record.attributes.should.not.have.property('hash');
+				});
+			});
 		});
 	});
 });
