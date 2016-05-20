@@ -20,7 +20,6 @@
     "eslint": "^2.10.2",
     "eslint-plugin-import": "^1.8.0",
     "express": "^4.13.4",
-    "fortune": "^4.0.0",
     "husky": "^0.11.4",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
@@ -32,6 +31,7 @@
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "bluebird": "^3.4.0",
+    "fortune": "^4.0.0",
     "fortune-json-api": "^2.0.5",
     "fortune-nedb": "^1.1.2",
     "lodash": "^4.12.0",
