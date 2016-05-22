@@ -25,10 +25,6 @@ app.use('/v1', (req, res) => {
 	.catch((error) => logger.error(error));
 });
 
-app.use('/', (req, res) => {
-	res.send('hello');
-});
-
 function start() {
 	return store.connect().then(() => app);
 }
