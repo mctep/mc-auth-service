@@ -1,4 +1,4 @@
-# Simple Auth Service [![Build Status](https://travis-ci.org/mctep/mc-auth-service.svg?branch=master)](https://travis-ci.org/mctep/mc-auth-service) [![Dependency Status](https://gemnasium.com/mctep/mc-auth-service.svg)](https://gemnasium.com/mctep/mc-auth-service)
+# Simple Auth Service [![Build Status](https://travis-ci.org/mctep/mc-auth-service.svg?branch=master)](https://travis-ci.org/mctep/mc-auth-service) [![Dependency Status](https://gemnasium.com/mctep/mc-auth-service.svg)](https://gemnasium.com/mctep/mc-auth-service) [![codecov](https://codecov.io/gh/mctep/mc-auth-service/branch/master/graph/badge.svg)](https://codecov.io/gh/mctep/mc-auth-service)
 
 It is a simple back-end auth service for storing users, passwords and access tokens with [JSON API v1.0](http://jsonapi.org/). Here are no roles or privileges, it should be implemented at separate Access Control Level service.
 
